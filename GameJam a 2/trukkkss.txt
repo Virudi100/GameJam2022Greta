@@ -1,6 +1,0 @@
--3 niveaux genre foret - desert - plage
--Raycast pour recup collectibles (pomme de pin, cactus, coconut)
--Vue en 3/4 iso
--Affichage level AsFarAsTheEye
--Event pour input, recup collectibles
--

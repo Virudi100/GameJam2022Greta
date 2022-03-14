@@ -1,0 +1,10 @@
+-3 niveaux genre foret - desert - plage
+-Raycast pour recup collectibles (pomme de pin, cactus, coconut)
+-Vue en 3/4 iso
+-Affichage level AsFarAsTheEye (a voir avecle temps)
+-Event pour input, recup collectibles
+-Boss de fin à chaque niveaux
+-Définir objectif pour battre les boss (pas de mort) -> apporte le gland a l'ecureil en evitent les chapeaux de gland qu'il t'envoie
+-Définir Boss foret (écureuil) desert (...) plage (Crabe)
+-Stocker collectible dans un tableau []
+-Cube rouge qui sorte des buissons -> si toucher *assomé* (petites etoiles) -> retourne au debut du niveau
