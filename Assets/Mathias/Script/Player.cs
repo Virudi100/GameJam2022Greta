@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
     IEnumerator Restart()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Main");
     }
 
     private void OnTriggerEnter(Collider other)
