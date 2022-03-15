@@ -9,6 +9,9 @@ public class IAEnemi : MonoBehaviour
     [SerializeField] private GameObject player;
     private bool isAggressive = true;
 
+    public delegate void Hit();
+    public static event Hit hit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,16 @@ public class IAEnemi : MonoBehaviour
         navmesh.speed = 40;
         yield return new WaitForSeconds(10);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            navmesh.speed = 0;
+            IAEnemi.hit.Invoke();
+            
+        }
     }
 
 
