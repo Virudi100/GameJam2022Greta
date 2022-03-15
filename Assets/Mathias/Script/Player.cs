@@ -6,10 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    private float speed = 1500f;
+    private float speed = 240f;
     private float jump = 5f;
     private Rigidbody rb;
-    private float xSpeed = 1100f;
+    private float xSpeed = 210f;
     private bool canjump = true;
     void Start()
     {
