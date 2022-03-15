@@ -42,6 +42,6 @@ public class SpawnManager : MonoBehaviour
     private void spawnEnemies()
     {
         doors[i].GetComponent<HisEnemis>().Enemies.SetActive(true);
-        i++;
+        i += 1;
     }
 }

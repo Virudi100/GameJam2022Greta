@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Anthony/Level1.unity
     guid: a29ce8dbdc8e71f4ab44adc0c3f78961
+  - enabled: 1
+    path: Assets/Mathias/Boss.unity
+    guid: c48ff3dfd0e9f4c4f97fb2005c2b0c48
   m_configObjects: {}
