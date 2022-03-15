@@ -7,14 +7,14 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-
-    
-
     private float speed = 240f;
     private Rigidbody rb;
     private float xSpeed = 210f;
     private bool isPlaying = true;
     [SerializeField] private GameObject stars;
+
+    public delegate void Trigger();
+    public static event Trigger trigger;
 
 
     void Start()
@@ -71,5 +71,13 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Level1");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("SpawnDoor"))
+        {
+            Player.trigger.Invoke();
+        }
     }
 }

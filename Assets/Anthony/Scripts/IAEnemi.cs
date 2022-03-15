@@ -6,8 +6,9 @@ using UnityEngine.AI;
 public class IAEnemi : MonoBehaviour
 {
     private NavMeshAgent navmesh;
-    [SerializeField] private GameObject player;
+    private GameObject player;
     private bool isAggressive = true;
+    private Transform pointFuite;
 
     public delegate void Hit();
     public static event Hit hit;
@@ -15,6 +16,8 @@ public class IAEnemi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pointFuite = GameObject.FindGameObjectWithTag("FuitePoint").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
         navmesh = GetComponent<NavMeshAgent>();
         StartCoroutine(Attack());
     }
@@ -27,13 +30,17 @@ public class IAEnemi : MonoBehaviour
             navmesh.SetDestination(player.transform.position);
         }
         else
-            navmesh.SetDestination(-player.transform.position);
+        {
+            navmesh.SetDestination(pointFuite.position);
+
+        }
+            
         
     }
 
     IEnumerator Attack()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(9);
         isAggressive = false;
         navmesh.speed = 40;
         yield return new WaitForSeconds(10);
