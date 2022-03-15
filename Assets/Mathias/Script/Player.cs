@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    private float speed = 240f;
+    private float speed = 250f;
     private Rigidbody rb;
-    private float xSpeed = 210f;
     private bool isPlaying = true;
     [SerializeField] private GameObject stars;
 
@@ -40,22 +39,22 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Z))
             {
-                rb.AddForce(new Vector3(xSpeed * Time.deltaTime, 0, speed * Time.deltaTime));
+                rb.AddForce(Vector3.forward * speed * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.S))
             {
-                rb.AddForce(new Vector3(-xSpeed * Time.deltaTime, 0, -speed * Time.deltaTime));
+                rb.AddForce(Vector3.back * speed * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.Q))
             {
-                rb.AddForce(new Vector3(-speed * Time.deltaTime, 0, 0));
+                rb.AddForce(Vector3.left * speed * Time.deltaTime);
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                rb.AddForce(new Vector3(speed * Time.deltaTime, 0, 0));
+                rb.AddForce(Vector3.right * speed * Time.deltaTime);
             }
         }
     }
