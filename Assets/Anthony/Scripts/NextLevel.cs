@@ -9,7 +9,7 @@ public class NextLevel : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Boss");
+            SceneManager.LoadScene("BossFight");
         }
     }
 }
