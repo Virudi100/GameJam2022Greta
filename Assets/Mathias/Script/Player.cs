@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    private float speed = 2000f;
-    private float jump = 2000f;
+    private float speed = 1500f;
+    private float jump = 5f;
     private Rigidbody rb;
     private float xSpeed = 1100f;
-    
+    private bool canjump = true;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -38,11 +39,20 @@ public class Player : MonoBehaviour
             rb.AddForce(new Vector3(speed*Time.deltaTime,0,0));
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canjump == true)
         {
-           rb.AddForce(new Vector3(0,jump*Time.deltaTime,0));
+            canjump = false;
+            rb.AddForce(new Vector3(0,2,0)*jump,ForceMode.Impulse);
         }
-            
         
+        
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            canjump = true;
+        }
     }
 }
