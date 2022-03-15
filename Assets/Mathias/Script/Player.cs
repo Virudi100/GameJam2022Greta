@@ -39,20 +39,30 @@ public class Player : MonoBehaviour
             rb.AddForce(new Vector3(speed*Time.deltaTime,0,0));
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canjump == true)
+        /*if (Input.GetKeyDown(KeyCode.Space) && canjump == true)
         {
+            
             canjump = false;
-            rb.AddForce(new Vector3(0,2,0)*jump,ForceMode.Impulse);
-        }
+            
+            StartCoroutine(isjump());
+        }*/
         
         
     }
 
-    public void OnCollisionEnter(Collision other)
+    /*public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
             canjump = true;
         }
-    }
+    }*/
+
+    /*public IEnumerator isjump()
+    {
+        
+        rb.AddForce(new Vector3(0,2,0)*jump,ForceMode.Impulse);
+        yield return new WaitForSeconds(0.5f);
+
+    }*/
 }
