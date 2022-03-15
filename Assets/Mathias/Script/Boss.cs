@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    
+    public GameObject prefab;
     
     void Start()
     {

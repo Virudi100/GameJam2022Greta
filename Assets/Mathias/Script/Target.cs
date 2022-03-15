@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private float speedrotate = 2f;
     void Start()
     {
         
