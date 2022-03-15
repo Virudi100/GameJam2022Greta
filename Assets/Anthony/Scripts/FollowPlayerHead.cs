@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class FollowPlayerHead : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    private GameObject player;
     private Vector3 offset = new Vector3(0,2,0);
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     private void Update()
     {
         gameObject.transform.position = player.transform.position + offset; 
