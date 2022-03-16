@@ -52,7 +52,7 @@ public class IAEnemi : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             navmesh.speed = 0;
-            IAEnemi.hit.Invoke();
+            hit?.Invoke();
             
         }
     }

@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
     {
         if(other.gameObject.CompareTag("SpawnDoor"))
         {
-            Player.trigger.Invoke();
+            trigger?.Invoke();
         }
     }
 }
