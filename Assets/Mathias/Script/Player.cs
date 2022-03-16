@@ -66,10 +66,23 @@ public class Player : MonoBehaviour
         StartCoroutine(Restart());
     }
 
+    public void KOBoss()
+    {
+        isPlaying = false;
+        stars.SetActive(true);
+        StartCoroutine(RestartBoss());
+    }
+
     IEnumerator Restart()
     {
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene("Main");
+    }
+
+    IEnumerator RestartBoss()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("BossFight");
     }
 
     private void OnTriggerEnter(Collider other)
