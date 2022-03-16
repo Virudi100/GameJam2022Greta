@@ -7,7 +7,12 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
     public Data starting;
-    
+
+    public void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     public void Demarrer()
     {   
         Reset();
@@ -16,7 +21,7 @@ public class StartGame : MonoBehaviour
 
     public void Reset()
     {
-        starting.indexScene = 0;
+        starting.indexScene = 1;
         starting._score = 0;
     }
 
