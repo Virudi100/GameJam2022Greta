@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         isPlaying = true;
         stars.SetActive(false);
         rb = gameObject.GetComponent<Rigidbody>();
