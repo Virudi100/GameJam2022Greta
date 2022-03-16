@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Datas
   m_EditorClassIdentifier: 
   _score: 1
-  indexScene: 1
+  indexScene: 0
