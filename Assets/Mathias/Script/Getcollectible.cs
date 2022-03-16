@@ -22,7 +22,7 @@ public class Getcollectible : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawLine(ray.origin,ray.direction,Color.red);
+        Debug.DrawRay(ray.origin,ray.direction,Color.red);
 
         if (Physics.Raycast(ray.origin,ray.direction,out hit))
         {
