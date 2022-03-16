@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Getcollectible : MonoBehaviour
 {
-    private int score;
+    public Data myData;
     public Camera camera;
     
     void Start()
@@ -31,7 +31,7 @@ public class Getcollectible : MonoBehaviour
             {
                 print("collidecollectible");
                 Destroy(hit.collider.gameObject);
-                score++;
+                myData._score++;
             }
         }
     }
