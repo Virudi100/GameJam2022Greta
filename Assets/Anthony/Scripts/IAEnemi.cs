@@ -16,6 +16,7 @@ public class IAEnemi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.GetComponent<AudioSource>().Play(); 
         pointFuite = GameObject.FindGameObjectWithTag("FuitePoint").transform;
         player = GameObject.FindGameObjectWithTag("Player");
         navmesh = GetComponent<NavMeshAgent>();

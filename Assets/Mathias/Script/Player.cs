@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private bool isPlaying = true;
     [SerializeField] private GameObject stars;
+    [SerializeField] private AudioSource playerDeathSound;
 
     public delegate void Trigger();
     public static event Trigger trigger;
@@ -64,6 +65,7 @@ public class Player : MonoBehaviour
 
     public void KO()
     {
+        playerDeathSound.Play();
         isPlaying = false;
         stars.SetActive(true);
         StartCoroutine(Restart());

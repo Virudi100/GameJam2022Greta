@@ -6,13 +6,9 @@ public class Getcollectible : MonoBehaviour
 {
     public Data myData;
     public Camera camera;
-    
-    void Start()
-    {
-        
-    }
+    [SerializeField] private AudioSource collectiblesound;
 
-    
+
     void Update()
     {
         GetmousePosition();
@@ -29,6 +25,7 @@ public class Getcollectible : MonoBehaviour
             print("istouch "+hit.collider.gameObject.tag);
             if (hit.collider.gameObject.CompareTag("collectible"))
             {
+                collectiblesound.Play();
                 print("collidecollectible");
                 Destroy(hit.collider.gameObject);
                 myData._score++;
