@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject boss;
     [SerializeField] private GameObject bulletExit;
+    [SerializeField] private GameObject happyBoss;
+    [SerializeField] private Sprite heartsprite;
 
     private GameObject newBullet;
     private RaycastHit rayHit;
@@ -16,13 +19,20 @@ public class Boss : MonoBehaviour
     [SerializeField] private GameObject projectile;
     private float shootSpeed = 1f;
     public bool isAgressive = true;
+    [SerializeField] private GameObject door;
     
     void Update()
     {
-        if(isAgressive == true)
+        if (isAgressive == true)
         {
             IsPlayerDetected();
         }
+        else
+        {
+            happyBoss.GetComponent<Image>().sprite = heartsprite;
+            Destroy(door);
+        }
+
         
     }
 
