@@ -9,6 +9,7 @@ TagManager:
   - FuitePoint
   - NextLevel
   - Gland
+  - collectible
   layers:
   - Default
   - TransparentFX
