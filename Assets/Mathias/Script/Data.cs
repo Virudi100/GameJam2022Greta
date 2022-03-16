@@ -5,5 +5,5 @@ using UnityEngine;
 public class Data : ScriptableObject
 {
     public int _score;
-   
+    public int indexScene;
 }

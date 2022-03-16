@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
+    [SerializeField] private Data mydata;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("BossFight");
+            mydata.indexScene++;
+            SceneManager.LoadScene(mydata.indexScene);
         }
     }
 }

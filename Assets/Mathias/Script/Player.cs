@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     public delegate void Trigger();
     public static event Trigger trigger;
 
+    [SerializeField] private string actualLevel;
+
 
     void Start()
     {
@@ -59,31 +61,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void KO()
+    public void KO()
     {
         isPlaying = false;
         stars.SetActive(true);
         StartCoroutine(Restart());
     }
 
-    public void KOBoss()
-    {
-        isPlaying = false;
-        stars.SetActive(true);
-        StartCoroutine(RestartBoss());
-    }
-
     IEnumerator Restart()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Main");
+        actualLevel = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(actualLevel);
     }
 
-    IEnumerator RestartBoss()
-    {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("BossFight");
-    }
 
     private void OnTriggerEnter(Collider other)
     {
