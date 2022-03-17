@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class NextLevel : MonoBehaviour
 {
     [SerializeField] private Data mydata;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
             mydata.indexScene++;
-            SceneManager.LoadScene(mydata.indexScene);
+            SceneManager.LoadScene(mydata.indexScene);      //Charge la prochaine scene par rapport a son index
         }
     }
 }

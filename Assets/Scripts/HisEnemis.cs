@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class HisEnemis : MonoBehaviour
 {
-    public GameObject Enemies;
+    public GameObject Enemies;  //Stock les Empty qui comporte les enemies a faire spawn
 }

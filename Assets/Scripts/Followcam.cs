@@ -5,15 +5,9 @@ using UnityEngine;
 public class Followcam : MonoBehaviour
 {
     public GameObject player;
-    
-    void Start()
-    {
-        
-    }
-
-    
+   
     void Update()
     {
-        gameObject.transform.position = player.transform.position;
+        gameObject.transform.position = player.transform.position;      //Suit la position du joueur
     }
 }

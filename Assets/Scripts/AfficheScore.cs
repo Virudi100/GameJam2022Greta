@@ -7,9 +7,10 @@ public class AfficheScore : MonoBehaviour
 {
     [SerializeField] private Data myData;
 
-    // Update is called once per frame
     void Update()
     {
+        //Recupère le score sur le scriptable object et l'affiche
+
         gameObject.GetComponent<Text>().text = (myData._score + " /10");
     }
 }
