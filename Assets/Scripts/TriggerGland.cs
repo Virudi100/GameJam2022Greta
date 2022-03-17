@@ -8,13 +8,10 @@ public class TriggerGland : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Gland"))
+        if (collision.gameObject.CompareTag("Gland"))       //Rend le boss gentil à l'impact du gland
         {
             Destroy(collision.gameObject);
             boss.GetComponent<Boss>().isAgressive = false;
-
-
-
         }
     }
 }

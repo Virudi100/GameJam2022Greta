@@ -8,6 +8,6 @@ public class ResetScore : MonoBehaviour
 
     private void Start()
     {
-        myData._score = 0;
+        myData._score = 0;      //Reset le score
     }
 }

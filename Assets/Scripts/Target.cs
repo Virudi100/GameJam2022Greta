@@ -5,12 +5,12 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private float speedrotate = 50f;
+
     void Update()
     {
-        rotation();
+        rotation();         //Fait tourné l'objet sur lui meme 
     }
 
-    // Update is called once per frame
     private void rotation()
     {
         gameObject.transform.Rotate(0, 1 * speedrotate * Time.deltaTime, 0); 

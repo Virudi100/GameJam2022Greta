@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] doors;
-    int i = 0;
+    int i = 0;  //Index des portes
 
     private void OnEnable()
     {
@@ -17,7 +17,7 @@ public class SpawnManager : MonoBehaviour
         Player.trigger -= spawnNextEnemies;
     }
 
-    private void spawnNextEnemies()
+    private void spawnNextEnemies() //Fait spawn les ennemis par rapport à l'index
     {
         switch (i)
         {

@@ -10,22 +10,22 @@ public class StartGame : MonoBehaviour
 
     public void Start()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1;         //Enleve la pause
     }
 
-    public void Demarrer()
+    public void Demarrer() //Demarre le jeu
     {   
         Reset();
         SceneManager.LoadScene(starting.indexScene);
     }
 
-    public void Reset()
+    public void Reset()     //Reset les scores
     {
         starting.indexScene = 1;
         starting._score = 0;
     }
 
-    public void OnApplicationQuit()
+    public void OnApplicationQuit() //Ferme l'application
     {
         Application.Quit();
     }

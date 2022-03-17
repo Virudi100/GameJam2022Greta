@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject stars;
     [SerializeField] private AudioSource playerDeathSound;
 
+
     public delegate void Trigger();
     public static event Trigger trigger;
 
@@ -39,9 +40,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (isPlaying == true)
+        if (isPlaying == true)                  //Bloque les inputs quand le joueur est KO
         {
-            if (Input.GetKey(KeyCode.Z))
+            if (Input.GetKey(KeyCode.Z))        //Inputs
             {
                 rb.AddForce(Vector3.forward * speed * Time.deltaTime);
             }
@@ -67,7 +68,9 @@ public class Player : MonoBehaviour
     {
         playerDeathSound.Play();
         isPlaying = false;
-        stars.SetActive(true);
+
+        stars.SetActive(true);      //Active les étoiles
+
         StartCoroutine(Restart());
     }
 
@@ -78,10 +81,9 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene(actualLevel);
     }
 
-
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("SpawnDoor"))
+        if(other.gameObject.CompareTag("SpawnDoor"))    //Quand le joueur passe a travers une porte de spawn d'ennemi, lance le trigger 
         {
             trigger?.Invoke();
         }
